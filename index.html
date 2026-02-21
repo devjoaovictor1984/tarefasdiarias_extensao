@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarefas Diárias</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="app" role="application" aria-label="Tarefas Diárias - organizador de tarefas com timer">
+
+    <header class="cabecalho">
+      <h1 class="titulo">Tarefas Diárias</h1>
+      <p class="subtitulo">Organize suas tarefas com foco e cronômetro.</p>
+    </header>
+
+    <main class="conteudo">
+
+      <!-- PAINEL ESQUERDO: CRIAR TAREFA -->
+      <section class="painel painel-formulario" aria-label="Criar tarefa">
+        <h2 class="painel-titulo">Criar tarefa</h2>
+
+        <form id="formTarefa" class="formulario" autocomplete="off">
+          <label class="campo">
+            <span class="campo-titulo">Nome da tarefa</span>
+            <input type="text" id="descricao" placeholder="Ex: Estudar JavaScript" maxlength="60" />
+          </label>
+
+          <label class="campo">
+            <span class="campo-titulo">Data</span>
+            <input type="date" id="data" />
+          </label>
+
+          <label class="campo">
+            <span class="campo-titulo">Tempo (minutos)</span>
+            <input type="number" id="minutos" placeholder="Ex: 25" min="1" max="999" />
+          </label>
+
+          <button id="adicionar" class="btn btn-primario" type="submit">
+            Adicionar tarefa
+          </button>
+
+          <p class="dica">
+            Dica: pressione <strong>Enter</strong> para adicionar.
+          </p>
+        </form>
+      </section>
+
+      <!-- PAINEL DIREITO: LISTA -->
+      <section class="painel painel-lista" aria-label="Lista de tarefas">
+
+        <div class="barra-topo">
+          <div class="filtros" role="tablist" aria-label="Filtros de tarefas">
+            <button class="filtro ativo" data-filtro="todas" type="button">Todas</button>
+            <button class="filtro" data-filtro="abertas" type="button">Em aberto</button>
+            <button class="filtro" data-filtro="concluidas" type="button">Concluídas</button>
+          </div>
+
+          <button id="limparTudo" class="btn btn-perigo" type="button" title="Apaga todas as tarefas">
+            Limpar tudo
+          </button>
+        </div>
+
+        <ul id="lista" class="lista" aria-live="polite"></ul>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Áudio local (mesma pasta do index.html). Você deve manter o arquivo despertador.mp3 na raiz da extensão. -->
+  <audio id="somFinalizacao" preload="auto" src="despertador.mp3"></audio>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

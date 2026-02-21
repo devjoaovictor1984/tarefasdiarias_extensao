@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Tarefas Diárias",
+  "short_name": "Tarefas",
+  "description": "Organize suas tarefas com cronômetro por tarefa e aviso sonoro ao finalizar. Os dados ficam salvos localmente no seu navegador.",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "Abrir Tarefas Diárias",
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
